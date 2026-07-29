@@ -8,7 +8,6 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
-import org.springframework.security.web.DefaultSecurityFilterChain;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -41,8 +40,13 @@ public class ConfiguracoesSeguranca {
                 })
                 .formLogin(form -> form
                     .loginPage("/login")
-                    .defaultSuccessUrl("/")
-                    .permitAll()).build();
+                    .defaultSuccessUrl("/", true)
+                    .permitAll())
+                .logout(
+                        logout -> logout.logoutSuccessUrl("/login?logout"))
+                .build();
     }
+
+
 
 }
