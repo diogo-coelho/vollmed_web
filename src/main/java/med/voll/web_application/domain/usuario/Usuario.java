@@ -21,8 +21,7 @@ public class Usuario implements UserDetails {
     @NotNull
     private String senha;
 
-    @NotNull
-    private String name;
+    private String nome;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

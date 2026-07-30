@@ -1,0 +1,7 @@
+UPDATE usuarios
+SET senha='$2y$10$GE/i8ZvFAPuRU8Av7Bq4sO3/PbSYWon2MG2oscE2B7nxPwCEGI2yu'
+WHERE id=1;
+
+UPDATE usuarios
+SET senha='$2y$10$c6ALXVt4z6MaI63UK53T4OSYergV7M2hOIpnrv9bT94c.Tl4FV64K'
+WHERE id=2;
