@@ -43,10 +43,15 @@ public class ConfiguracoesSeguranca {
                     .defaultSuccessUrl("/", true)
                     .permitAll())
                 .logout(
-                        logout -> logout.logoutSuccessUrl("/login?logout"))
+                        logout ->
+                                logout.logoutSuccessUrl("/login?logout"))
+                .rememberMe(rememberMe ->
+                        rememberMe
+                                .key("lembrarDeMim")
+                                .alwaysRemember(true)
+                                //.tokenValiditySeconds(86400)
+                )
                 .build();
     }
-
-
 
 }
